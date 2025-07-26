@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Definitivo de Ventas Modernas</title>
+    <style>
+        :root {
+            --primary-color: #005A9C;
+            --secondary-color: #003F6E;
+            --accent-color: #FFC107;
+            --light-gray: #f4f4f9;
+            --dark-gray: #333;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .module {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            scroll-margin-top: 80px; /* Offset for sticky nav */
+        }
+
+        .module h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        .speak-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+        }
+        .speak-button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .clickable-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .clickable-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .key-point, .exercise, .expert-tip {
+            padding: 15px;
+            border-left-width: 5px;
+            border-left-style: solid;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .clickable-card .key-point, .clickable-card .exercise, .clickable-card .expert-tip {
+             margin: 0;
+        }
+
+        .key-point {
+            background-color: #e7f3fe;
+            border-left-color: #2196F3;
+        }
+        .key-point::before { content: '🔑 Punto Clave: '; font-weight: bold; }
+
+        .exercise {
+            background-color: #fff9c4;
+            border-left-color: #FFEB3B;
+        }
+        .exercise::before { content: '💪 Ejercicio Práctico: '; font-weight: bold; }
+
+        .expert-tip {
+            background-color: #e8f5e9;
+            border-left-color: #4CAF50;
+        }
+        .expert-tip::before { content: '💡 Consejo de Experto: '; font-weight: bold; }
+        
+        .expand-notice {
+            display: block;
+            margin-top: 10px;
+            font-style: italic;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: right;
+        }
+
+        .quiz-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .quiz-container h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        .quiz-button {
+            background-color: var(--accent-color);
+            color: var(--dark-gray);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-button:hover {
+            background-color: #ffca28;
+        }
+
+        .quiz-results {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Curso Definitivo de Ventas Modernas</h1>
+        <p>De Cero a Cierre: Domina el Arte y la Ciencia de Vender</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#modulo1">Módulo 1: Mentalidad</a></li>
+            <li><a href="#modulo2">Módulo 2: Neuroventas</a></li>
+            <li><a href="#modulo3">Módulo 3: Proceso</a></li>
+            <li><a href="#modulo4">Módulo 4: Persuasión</a></li>
+            <li><a href="#modulo5">Módulo 5: Venta Telefónica</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="modulo1" class="module">
+            <h2>Módulo 1: La Mentalidad del Vendedor de Éxito</h2>
+            <button class="speak-button" onclick="speakModule('modulo1')">▶️ Escuchar Módulo</button>
+            <p>Todo gran vendedor construye su éxito sobre una base sólida: la confianza inquebrantable en sí mismo. No se trata de arrogancia, sino de una profunda convicción en el valor que ofreces y en tu capacidad para comunicarlo. Inspirado en las ideas de Emerson, el vendedor de élite es un inconformista que piensa por sí mismo y no sigue ciegamente las costumbres.</p>
+            
+            <a href="modulos/1-1-confianza.html" class="clickable-card">
+                <div class="key-point">
+                    <strong>Confía en ti mismo: cada corazón vibra según esa cuerda de hierro.</strong> Tu intuición y tu propio juicio son tus herramientas más poderosas. No las silencies por seguir un guion o una técnica que no resuena contigo. La autenticidad es magnética.
+                    <span class="expand-notice">Haz clic para expandir...</span>
+                </div>
+            </a>
+            
+            <a href="modulos/1-2-autenticidad.html" class="clickable-card">
+                <div class="key-point">
+                    <strong>La imitación es un suicidio.</strong> Querer ser como otro vendedor es renunciar a tu propia fortaleza. Aprende de los demás, pero no los copies. Adapta las técnicas a tu personalidad. Tu estilo único es tu mayor ventaja competitiva.
+                    <span class="expand-notice">Haz clic para expandir...</span>
+                </div>
+            </a>
+            <a href="modulos/1-3-confianza-transmitida.html" class="clickable-card">
+            <div class="expert-tip">
+                El cliente no compra un producto, compra la confianza que el vendedor le transmite. Si tú no crees en tu producto o en ti mismo, ¿por qué debería hacerlo el cliente? La confianza se proyecta en tu tono de voz, tu lenguaje corporal y tu seguridad al responder preguntas.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/1-4-ejercicio-visualizacion.html" class="clickable-card">
+            <div class="exercise">
+                Dedica 5 minutos antes de empezar tu jornada a visualizar tus éxitos. Recuerda una venta en la que te sentiste invencible. Ancla ese sentimiento. Luego, escribe una frase que resuma por qué crees genuinamente en lo que vendes. Repítela.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <div class="quiz-container" id="quiz1"></div>
+        </div>
+
+        <div id="modulo2" class="module">
+            <h2>Módulo 2: Psicología y Neuroventas</h2>
+            <button class="speak-button" onclick="speakModule('modulo2')">▶️ Escuchar Módulo</button>
+            <p>Las decisiones de compra no son lógicas; son emocionales y se justifican con la lógica después. La neuroventa nos enseña a comunicarnos directamente con el cerebro que toma las decisiones: el cerebro reptiliano.</p>
+            
+            <a href="modulos/2-1-cerebro-reptiliano.html" class="clickable-card">
+                <div class="key-point">
+                    <strong>Véndele al cerebro reptiliano.</strong> Este cerebro es instintivo y egoísta. No le interesan las características complejas, sino la supervivencia y el bienestar. Traduce lo que vendes a beneficios tangibles y directos: ¿cómo le ahorra dinero, tiempo o esfuerzo? ¿Cómo le reduce el miedo o le da más placer/estatus?
+                    <span class="expand-notice">Haz clic para expandir...</span>
+                </div>
+            </a>
+
+            <a href="modulos/2-2-lenguaje-accion.html" class="clickable-card">
+            <div class="expert-tip">
+                Usa verbos de acción y conceptos visuales. En lugar de decir "nuestro software optimiza procesos", di "imagina eliminar tres horas de trabajo manual cada día". Habla de "tú" y "tus resultados", no de "nosotros" y "nuestro producto".
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+             <a href="modulos/2-3-poder-contraste.html" class="clickable-card">
+             <div class="key-point">
+                <strong>El poder del contraste.</strong> El cerebro reptiliano entiende las cosas por comparación. Muestra un antes y un después, el problema y tu solución, el riesgo de no actuar vs. la seguridad de comprar. El contraste crea urgencia y claridad.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/2-4-ejercicio-beneficio-reptiliano.html" class="clickable-card">
+            <div class="exercise">
+                Toma la característica principal de tu producto. Ahora, escribe 5 formas de describirla apelando a la emoción y al beneficio egoísta del cliente. Por ejemplo, si vendes un coche con "frenos ABS", el beneficio reptiliano es "Protege a tu familia en una frenada de emergencia".
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <div class="quiz-container" id="quiz2"></div>
+        </div>
+
+        <div id="modulo3" class="module">
+            <h2>Módulo 3: El Proceso de Venta Paso a Paso</h2>
+            <button class="speak-button" onclick="speakModule('modulo3')">▶️ Escuchar Módulo</button>
+            <p>Una venta exitosa no es un acto de magia, es un proceso estructurado. Seguir los pasos te da control y te permite identificar dónde mejorar.</p>
+            
+            <a href="modulos/3-1-proceso-prospeccion.html" class="clickable-card">
+                <div class="key-point"><strong>1. Prospección:</strong> ¿Dónde están tus clientes ideales? Define tu "buyer persona" y busca activamente donde se encuentre (redes, eventos, referidos).<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-2-proceso-contacto.html" class="clickable-card">
+                <div class="key-point"><strong>2. Contacto Inicial:</strong> Tu único objetivo es conseguir una reunión. Aporta valor desde el primer segundo. Investiga a tu prospecto y personaliza tu mensaje.<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-3-proceso-deteccion.html" class="clickable-card">
+                <div class="key-point"><strong>3. Detección de Necesidades:</strong> ¡La fase más importante! No hables, pregunta. Usa preguntas abiertas (Qué, Cómo, Cuándo, Por qué) para que el cliente te revele sus "dolores".<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-4-proceso-presentacion.html" class="clickable-card">
+                <div class="key-point"><strong>4. Presentación de la Solución:</strong> No recites un catálogo. Presenta únicamente las características que resuelven los "dolores" que el cliente te acaba de contar.<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-5-proceso-objeciones.html" class="clickable-card">
+                <div class="key-point"><strong>5. Manejo de Objeciones:</strong> Una objeción no es un "no", es una petición de más información. ¡Celébrala! Demuestra que has escuchado y luego resuelve la duda.<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-6-proceso-cierre.html" class="clickable-card">
+                <div class="key-point"><strong>6. Cierre:</strong> Si has hecho bien los pasos anteriores, el cierre es natural. Es simplemente preguntar por la venta.<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            <a href="modulos/3-7-proceso-seguimiento.html" class="clickable-card">
+                <div class="key-point"><strong>7. Seguimiento:</strong> La venta no termina con el pago. Un buen seguimiento asegura la satisfacción, genera referidos y abre la puerta a futuras ventas.<span class="expand-notice">Haz clic para expandir...</span></div>
+            </a>
+            
+            <a href="modulos/3-8-proceso-doctor-ventas.html" class="clickable-card">
+            <div class="expert-tip">
+                El mejor vendedor no es el que mejor habla, sino el que mejor escucha y hace las preguntas más inteligentes. Tu objetivo es ser un "doctor de ventas": diagnostica el problema antes de recetar la solución.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <div class="quiz-container" id="quiz3"></div>
+        </div>
+
+        <div id="modulo4" class="module">
+            <h2>Módulo 4: Técnicas Maestras de Persuasión y Cierre</h2>
+            <button class="speak-button" onclick="speakModule('modulo4')">▶️ Escuchar Módulo</button>
+            <p>La persuasión no es manipulación; es el arte de presentar la verdad de la forma más convincente. Se basa en principios psicológicos universales.</p>
+            <a href="modulos/4-1-persuasion-reciprocidad.html" class="clickable-card">
+            <div class="key-point">
+                <strong>Principio de Reciprocidad:</strong> Ofrece valor genuino antes de pedir nada a cambio (un consejo, un pequeño informe, una demo útil). La gente se siente naturally inclinada a devolver el favor.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/4-2-persuasion-escasez.html" class="clickable-card">
+            <div class="key-point">
+                <strong>Principio de Escasez:</strong> "Oferta por tiempo limitado", "Solo quedan 3 unidades". Lo que es escaso se percibe como más valioso. Úsalo con ética y solo cuando sea real.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/4-3-persuasion-prueba-social.html" class="clickable-card">
+            <div class="key-point">
+                <strong>Principio de Prueba Social:</strong> "El 90% de nuestros clientes reportan...", "Somos la solución mejor valorada en...". Mostramos que otros como ellos ya confían en nosotros. Los testimonios y los casos de éxito son oro.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/4-4-persuasion-doble-alternativa.html" class="clickable-card">
+            <div class="expert-tip">
+                Para el cierre, utiliza la "Técnica del Doble Alternativa". No preguntes "si" quiere comprar, sino "cómo" quiere comprar. "¿Prefieres pagar con tarjeta o transferencia?" o "¿La entrega la programamos para el martes o para el jueves?". Asume la venta.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+             <a href="modulos/4-5-persuasion-ejercicio.html" class="clickable-card">
+             <div class="exercise">
+                Piensa en tu proceso de venta. ¿Dónde puedes aplicar cada uno de estos principios? ¿Puedes ofrecer algo de valor al inicio (reciprocidad)? ¿Tienes testimonios potentes (prueba social)? ¿Hay alguna razón legítima para crear urgencia (escasez)?
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <div class="quiz-container" id="quiz4"></div>
+        </div>
+
+        <div id="modulo5" class="module">
+            <h2>Módulo 5: Canales de Venta Específicos: Venta Telefónica</h2>
+            <button class="speak-button" onclick="speakModule('modulo5')">▶️ Escuchar Módulo</button>
+            <p>El teléfono sigue siendo una herramienta de venta increíblemente poderosa si se usa correctamente. Tu voz es tu única herramienta para transmitir confianza y emoción.</p>
+            <a href="modulos/5-1-telefonica-sonrisa.html" class="clickable-card">
+            <div class="key-point">
+                <strong>La Sonrisa Telefónica:</strong> Sonríe físicamente cuando hables. Aunque no te vean, tu tono de voz cambia, se vuelve más cálido y amigable. Es un truco neurológico que funciona.
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <a href="modulos/5-2-telefonica-estructura.html" class="clickable-card">
+            <div class="expert-tip">
+                <strong>Estructura de la llamada:</strong>
+                <ol>
+                    <li><strong>Apertura (Primeros 7 segundos):</strong> Di tu nombre, tu empresa y una razón ultra-relevante para tu llamada.</li>
+                    <li><strong>Calificación:</strong> Haz 2-3 preguntas clave para ver si es el prospecto adecuado.</li>
+                    <li><strong>Crear Interés:</strong> Comparte un dato impactante o un beneficio clave.</li>
+                    <li><strong>Objetivo:</strong> Tu objetivo es agendar una reunión más larga.</li>
+                </ol>
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+             <a href="modulos/5-3-telefonica-ejercicio-grabacion.html" class="clickable-card">
+             <div class="exercise">
+                Grábate leyendo tu guion de llamada. Luego escúchate. ¿Suenas monótono? ¿Dubitativo? ¿O transmites energía y seguridad? Pide a un colega que te dé feedback honesto sobre tu "voz de vendedor".
+                <span class="expand-notice">Haz clic para expandir...</span>
+            </div>
+            </a>
+            <div class="quiz-container" id="quiz5"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Curso creado con la síntesis de conocimiento experto. © 2025</p>
+        <p>Recuerda: El aprendizaje es un viaje, no un destino. ¡Sigue practicando!</p>
+    </footer>
+
+    <script>
+        // --- Lógica de los Quizzes ---
+        const quizzes = {
+            quiz1: {
+                title: "Autoevaluación: Mentalidad",
+                questions: [
+                    { q: "Según el curso, ¿cuál es la base del éxito de un vendedor?", a: "La confianza en sí mismo y su autenticidad." },
+                    { q: "¿Qué significa 'la imitación es un suicidio' en ventas?", a: "Copiar a otros te hace renunciar a tu estilo único, que es tu mayor ventaja." },
+                    { q: "El cliente no compra un producto, compra la...", a: "Confianza que el vendedor transmite." }
+                ]
+            },
+            quiz2: {
+                title: "Autoevaluación: Neuroventas",
+                questions: [
+                    { q: "¿A qué cerebro debemos dirigir nuestro mensaje de venta?", a: "Al cerebro reptiliano." },
+                    { q: "¿Qué le interesa a este cerebro?", a: "La supervivencia, el ahorro de energía y el aumento del placer/estatus." },
+                    { q: "Una forma efectiva de crear urgencia y claridad es usar el...", a: "Contraste (antes/después, problema/solución)." }
+                ]
+            },
+            quiz3: {
+                title: "Autoevaluación: Proceso de Venta",
+                questions: [
+                    { q: "¿Cuál es la fase más importante del proceso de venta?", a: "La detección de necesidades." },
+                    { q: "En la fase de detección de necesidades, un buen vendedor...", a: "Escucha el 80% y habla el 20%." },
+                    { q: "Una objeción debe ser vista como...", a: "Una petición de más información." }
+                ]
+            },
+            quiz4: {
+                title: "Autoevaluación: Persuasión y Cierre",
+                questions: [
+                    { q: "Ofrecer un consejo útil antes de pedir una reunión es un ejemplo del principio de...", a: "Reciprocidad." },
+                    { q: "Mostrar testimonios de clientes satisfechos apela al principio de...", a: "Prueba Social." },
+                    { q: "La técnica del 'Doble Alternativa' (ej: '¿martes o jueves?') ayuda a...", a: "Asumir la venta y facilitar el cierre." }
+                ]
+            },
+            quiz5: {
+                title: "Autoevaluación: Venta Telefónica",
+                questions: [
+                    { q: "¿Qué es la 'sonrisa telefónica'?", a: "Sonreír físicamente mientras hablas para que tu tono de voz sea más cálido." },
+                    { q: "¿Cuál es el objetivo principal de una primera llamada en frío?", a: "Agendar una reunión, no vender el producto completo." },
+                    { q: "Los primeros segundos de la llamada son cruciales para...", a: "Captar la atención con un mensaje relevante y personalizado." }
+                ]
+            }
+        };
+
+        function renderQuiz(quizId) {
+            const quizData = quizzes[quizId];
+            const quizContainer = document.getElementById(quizId);
+            if (!quizData || !quizContainer) return;
+
+            let html = `<h3>${quizData.title}</h3>`;
+            quizData.questions.forEach((item, index) => {
+                const parts = item.q.split('...');
+                html += `
+                    <div class="question" id="q-${quizId}-${index}">
+                        <p>${parts[0]} <input type="text" id="ans-${quizId}-${index}" placeholder="Completa la frase..."> ${parts[1] || ''}</p>
+                    </div>
+                `;
+            });
+
+            html += `<button class="quiz-button" onclick="submitQuiz('${quizId}')">Evaluar Mis Respuestas</button>`;
+            html += `<div class="quiz-results" id="res-${quizId}"></div>`;
+            quizContainer.innerHTML = html;
+        }
+
+        function submitQuiz(quizId) {
+            const quizData = quizzes[quizId];
+            let score = 0;
+            quizData.questions.forEach((item, index) => {
+                const userAnswer = document.getElementById(`ans-${quizId}-${index}`).value.trim().toLowerCase();
+                const correctAnswer = item.a.trim().toLowerCase();
+                const questionDiv = document.getElementById(`q-${quizId}-${index}`);
+                if (userAnswer.length > 3 && correctAnswer.includes(userAnswer)) {
+                    score++;
+                    questionDiv.style.border = '2px solid var(--success-color)';
+                } else {
+                    questionDiv.style.border = '2px solid var(--error-color)';
+                }
+            });
+
+            const resultsContainer = document.getElementById(`res-${quizId}`);
+            const totalQuestions = quizData.questions.length;
+            let feedbackText = `Tu puntuación: ${score} de ${totalQuestions}. `;
+            if (score === totalQuestions) {
+                feedbackText += "¡Excelente! Has interiorizado los conceptos clave.";
+                resultsContainer.style.backgroundColor = 'var(--success-color)';
+                resultsContainer.style.color = 'white';
+            } else {
+                feedbackText += "¡Buen intento! Repasa los puntos clave del módulo para afianzar tu conocimiento.";
+                resultsContainer.style.backgroundColor = 'var(--accent-color)';
+                resultsContainer.style.color = 'var(--dark-gray)';
+            }
+            resultsContainer.innerHTML = feedbackText;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            for (const quizId in quizzes) {
+                renderQuiz(quizId);
+            }
+        });
+
+        // --- Lógica de la Síntesis de Voz ---
+        let femaleVoice = null;
+
+        function loadAndSetVoice() {
+            const voices = speechSynthesis.getVoices();
+            const preferredNames = ['Paulina', 'Laura', 'Sofía', 'Camila', 'Monica', 'Isabella'];
+            
+            femaleVoice = voices.find(voice => voice.lang.startsWith('es-') && preferredNames.some(name => voice.name.includes(name))) ||
+                          voices.find(voice => voice.lang.startsWith('es-') && (voice.name.includes('Female') || voice.name.includes('Femenina'))) ||
+                          null;
+        }
+
+        loadAndSetVoice();
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = loadAndSetVoice;
+        }
+
+        let currentlySpeakingModule = null;
+
+        function speakModule(moduleId) {
+            const allButtons = document.querySelectorAll('.speak-button');
+            const currentButton = document.querySelector(`#${moduleId} .speak-button`);
+
+            if (speechSynthesis.speaking && currentlySpeakingModule === moduleId) {
+                speechSynthesis.cancel();
+                currentlySpeakingModule = null;
+                currentButton.innerHTML = '▶️ Escuchar Módulo';
+                return;
+            }
+            
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            }
+
+            allButtons.forEach(btn => btn.innerHTML = '▶️ Escuchar Módulo');
+            currentButton.innerHTML = '⏹️ Deteniendo...';
+            
+            const moduleElement = document.getElementById(moduleId);
+            if (!moduleElement) return;
+
+            let textToSpeak = '';
+            const elementsToRead = moduleElement.querySelectorAll('h2, p, .key-point, .expert-tip, .exercise');
+            
+            elementsToRead.forEach(el => {
+                const clone = el.cloneNode(true);
+                const notice = clone.querySelector('.expand-notice');
+                if (notice) {
+                    notice.remove();
+                }
+                textToSpeak += clone.innerText.trim() + '. ';
+            });
+
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+            utterance.lang = 'es-LA';
+
+            if (femaleVoice) {
+                utterance.voice = femaleVoice;
+            }
+
+            utterance.onstart = () => {
+                currentlySpeakingModule = moduleId;
+                currentButton.innerHTML = '⏹️ Detener Lectura';
+            };
+            utterance.onend = () => {
+                currentlySpeakingModule = null;
+                currentButton.innerHTML = '▶️ Escuchar Módulo';
+            };
+            utterance.onerror = () => {
+                currentlySpeakingModule = null;
+                currentButton.innerHTML = '▶️ Escuchar Módulo';
+            };
+
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
